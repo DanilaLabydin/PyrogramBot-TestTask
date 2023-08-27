@@ -1,0 +1,5 @@
+venv
+__pycache__
+.env
+database.ini
+my_account.session*

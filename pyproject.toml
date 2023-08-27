@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pyrogrambot-testtask"
+version = "0.1.0"
+description = ""
+authors = ["DanilaLabydin <labydin2605@mail.ru>"]
+readme = "README.md"
+packages = [{include = "pyrogrambot_testtask"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyrogram = "^2.0.106"
+tgcrypto = "^1.2.5"
+loguru = "^0.7.0"
+configparser = "^6.0.0"
+python-dotenv = "^1.0.0"
+asyncpg = "^0.28.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
