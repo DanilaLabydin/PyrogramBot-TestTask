@@ -21,8 +21,6 @@ async def send_scheduled_messages(client, message):
 
     user_id = message.from_user.id
     message_date = message.date
-    # print(user_id)
-    # print(message_date)
     await client.send_message(
         chat_id=user_id,
         text=GREETING_MESSAGE,
