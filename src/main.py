@@ -21,6 +21,7 @@ async def send_scheduled_messages(client, message):
 
     user_id = message.from_user.id
     message_date = message.date
+
     await client.send_message(
         chat_id=user_id,
         text=GREETING_MESSAGE,
@@ -36,6 +37,12 @@ async def send_scheduled_messages(client, message):
         photo="pyrogram.png",
         schedule_date=message_date + SEND_PHOTO_TIME,
     )
+
+    async for message in app.search_messages(
+        chat_id=user_id, query="Хорошего дня", from_user="me"
+    ):
+        return
+
     await client.send_message(
         chat_id=user_id, text=GOODBYU_MESSAGE, schedule_date=message_date + GOODBYU_TIME
     )
